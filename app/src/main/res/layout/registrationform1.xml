@@ -1,0 +1,252 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:id="@+id/nestedscrollview"
+    android:background="#C2E1FF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- FrameLayout to contain and layer small ImageView -->
+        <LinearLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/smallImageViewContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/smallImageViewContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Original small ImageView (back arrow) -->
+            <ImageView
+                android:id="@+id/smallImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="start"
+                android:layout_margin="8dp"
+                android:src="@drawable/registrationform1_backarrow" />
+
+            <!-- Additional small ImageView inside FrameLayout -->
+            <ImageView
+                android:id="@+id/smallImageViewInside"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:src="@drawable/registrationform1_smallestarrow" />
+
+        </FrameLayout>
+
+        <!-- Top center ImageView (Logo) -->
+        <ImageView
+            android:id="@+id/imageview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/registrationform1_topimage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/smallImageViewContainer" />
+
+        <!-- Second TextView below the first ImageView -->
+        <TextView
+            android:id="@+id/imageview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Registered"
+            android:textColor="@color/themecolor"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageview1" />
+
+        <!-- Third TextView below the second TextView -->
+        <TextView
+            android:id="@+id/imageview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Enter your personal information"
+            android:textColor="@color/themecolor"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageview2"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!-- First name field -->
+        <EditText
+            android:id="@+id/firstnameedittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/registrationform1_person"
+            android:drawablePadding="10dp"
+            android:hint="First name"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageview3"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <!-- Last name field -->
+        <EditText
+            android:id="@+id/lastnameedittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/registrationform1_person"
+            android:drawablePadding="10dp"
+            android:hint="Last name"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstnameedittext"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <EditText
+            android:id="@+id/fathernameedittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/registrationform1_person"
+            android:drawablePadding="10dp"
+            android:hint="Father name"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastnameedittext"
+            app:layout_constraintWidth_percent="0.8" />
+        <!-- Password field -->
+        <FrameLayout
+            android:id="@+id/passwordFieldContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fathernameedittext"
+            app:layout_constraintWidth_percent="0.8">
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/registrationform1_mail"
+                android:background="@drawable/edittext_background"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:drawablePadding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:paddingStart="10dp"/>
+        </FrameLayout>
+
+        <!-- Gender Spinner -->
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/registrationform1_gender"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordFieldContainer"
+            app:layout_constraintWidth_percent="0.8"
+            android:paddingStart="10dp"/>
+
+        <!-- Phone number field -->
+        <EditText
+            android:id="@+id/dateofbirthedittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/dateofbirth"
+            android:drawablePadding="10dp"
+            android:hint="Date of Birth"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:background="@drawable/edittext_background"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/genderSpinner"
+            app:layout_constraintWidth_percent="0.8"
+            android:paddingStart="10dp"/>
+
+
+
+
+        <FrameLayout
+            android:id="@+id/registrationnumberFieldContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateofbirthedittext"
+            app:layout_constraintWidth_percent="0.8">
+
+            <EditText
+                android:id="@+id/registrationnumberedittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/rollno"
+                android:background="@drawable/edittext_background"
+                android:hint="Roll Number XXXX_XXX_XXX"
+                android:drawablePadding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:inputType="text"
+                android:paddingStart="10dp"/>
+        </FrameLayout>
+
+        <!-- Button to proceed -->
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/registrationform1_button"
+            android:text="Next"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registrationnumberFieldContainer"
+            app:layout_constraintWidth_percent="0.8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+
+
